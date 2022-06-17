@@ -25,6 +25,8 @@
 /* Begin PBXFileReference section */
 		39A01477285CCD5F0007DC1D /* XMLFields */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = XMLFields; sourceTree = BUILT_PRODUCTS_DIR; };
 		39A0147A285CCD5F0007DC1D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		39A01481285CCDB40007DC1D /* XMLFieldTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMLFieldTemplate.h; sourceTree = "<group>"; };
+		39A01482285CCE6D0007DC1D /* uuid.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = uuid.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,8 @@
 		39A01479285CCD5F0007DC1D /* XMLFields */ = {
 			isa = PBXGroup;
 			children = (
+				39A01481285CCDB40007DC1D /* XMLFieldTemplate.h */,
+				39A01482285CCE6D0007DC1D /* uuid.h */,
 				39A0147A285CCD5F0007DC1D /* main.cpp */,
 			);
 			path = XMLFields;
