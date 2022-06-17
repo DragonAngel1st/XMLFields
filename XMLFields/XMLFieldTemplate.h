@@ -41,4 +41,11 @@ inline XMLField<XMLFieldDataType>::XMLField(XMLFieldDataType _data, string _desc
     description = _description;
 };
 
+
+template <typename XMLFieldDataType>
+class CustomXMLField : public XMLField<XMLFieldDataType>
+{
+    //etc...
+};
+
 #endif /* XMLFieldTemplate_h */
