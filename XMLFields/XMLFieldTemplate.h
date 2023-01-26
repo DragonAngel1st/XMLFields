@@ -14,26 +14,37 @@
 
 using namespace std;
 
-class baseXMLField
+class Element
 {
 public:
     string uuid;
     string description;
-    vector<baseXMLField> subFields;
+    vector<pair<string,string>> attributes;
+    vector<Element> elements;
     
-    void add(baseXMLField someField)
+    void add(Element someField)
     {
-        subFields.push_back(someField);
+        elements.push_back(someField);
+    }
+    void print()
+    {
+        std::cout << description << std::endl;
+        for (auto element : elements)
+        {
+            element.print();
+        }
     }
 };
 
+//Template constructors
 template <typename XMLFieldDataType>
-class XMLField : public baseXMLField
+class XMLField : public Element
 {
 public:
     XMLFieldDataType data;
     XMLField<XMLFieldDataType>(XMLFieldDataType data, string description);
 };
+
 
 template <typename XMLFieldDataType>
 inline XMLField<XMLFieldDataType>::XMLField(XMLFieldDataType _data, string _description):data(_data) {
@@ -46,6 +57,14 @@ template <typename XMLFieldDataType>
 class CustomXMLField : public XMLField<XMLFieldDataType>
 {
     //etc...
+};
+
+class RootXMLDocument
+{
+public:
+    string XMLVersion;
+    vector<pair<string,string>> attributes;
+    Element * contentPtrs;
 };
 
 #endif /* XMLFieldTemplate_h */
