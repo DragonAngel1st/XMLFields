@@ -17,15 +17,18 @@ int main(int argc, const char * argv[]) {
     //Create an XML document
     string descriptionOfField = "Start of XML Document";
     string data = "1.0";
-    XMLField<string> XMLDoc = XMLField(data, descriptionOfField);
+    XMLElement<string> XMLDoc = XMLElement(data, descriptionOfField);
     
     int pageNumber = 5;
-    XMLField<int> pageField = XMLField(pageNumber, (string)"PageNumber");
+    XMLElement<int> pageField = XMLElement(pageNumber, (string)"PageNumber");
     
-    RootXMLDocument newXMLDoc;
-    newXMLDoc.XMLVersion = "1.0";
+    XMLElement<string> rootXMLDocument = XMLElement(string("XML Version="),string("1.0"));
+    //newXMLDoc.XMLVersion = "1.0";
     
-    XMLDoc.add(pageField);
+    XMLAttribute * attributePtr = new XMLAttribute("encoding","UTF-8");
+    XMLDoc.add(attributePtr);
+    
+    //XMLDoc.add(pageField);
     
     XMLDoc.print();
     
